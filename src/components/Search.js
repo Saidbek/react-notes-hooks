@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Search = ({ handleSearchNote }) => {
   return (
     <div className="search">
