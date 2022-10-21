@@ -1,18 +1,5 @@
 import { useState } from "react";
 
-const Note = ({ id, text, date, handleDeleteNote }) => {
-  return (
-    <div className="note">
-      <span>{text}</span>
-      <div className="note-footer">
-        <small>{date}</small>
-
-        <button onClick={() => handleDeleteNote(id)}>Delete</button>
-      </div>
-    </div>
-  );
-};
-
 const AddNote = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
   const characterLimit = 200;
@@ -49,21 +36,4 @@ const AddNote = ({ handleAddNote }) => {
   );
 };
 
-const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
-  return (
-    <div className="notes-list">
-      {notes.map((note) => (
-        <Note
-          key={note.id}
-          text={note.text}
-          date={note.date}
-          handleDeleteNote={handleDeleteNote}
-        />
-      ))}
-
-      <AddNote handleAddNote={handleAddNote} />
-    </div>
-  );
-};
-
-export default NotesList;
+export default AddNote;
